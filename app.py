@@ -9,9 +9,13 @@ def home_page():
 def memory_game():
 	return render_template('text.html')
 
-@app.route('/game1')
+@app.route('/endgame')
 def endGamePage():
 	return render_template('endGame.html')
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

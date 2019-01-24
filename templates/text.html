@@ -2,7 +2,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 .card_img{
   width: 100%;
@@ -19,16 +19,23 @@
 }
 .text1{
 	color: #cc33ff; 
-	padding-left: 4%;
 
+}
+a{
+	font: 30px arial, sans-serif;
+	color: #8600b3;
 }
 
 </style>
-
-<div class="text1"> 
-	<H2>MEMORY GAME</H2>
-</div>
-<div id="game"></div>
+<body>
+	<div class="text1"> 
+		<H2>A memory game by Mor Yehuda</H2>
+	</div>
+	<a href = "/game"  >click here to start again</a>
+	<div id="game">
+	</div>
+	
+</body>
 
 <script>
 var opens = [];
@@ -58,17 +65,16 @@ function play_card(card,id){
 		return;	
 	}
 
-	
-
 	if(card == openCard)
 	{
-		
 		opens.push(id);
 		opens.push(openId);
 		openCard=-1;
 		openId=-1;
-		return;
+		return ;
 	}
+
+	
 	cantplay=true;
 	var element2 = document.getElementById('img'+openId);
 	setTimeout(function(){
@@ -108,7 +114,7 @@ function generateBoard(){
 								// 
 							 	// ****^***** so from this we want to remove the ^
 								// ********* +1 when >= to the ^ location
-			if(randomNum >= randomNums[j]){
+			if(randomNum >= randomNums[j]){6
 				randomNum++;
 			}
 		}
@@ -123,11 +129,12 @@ function generateBoard(){
 	randomNums.sort(function(a, b){return Math.random()-0.5});//sorting randomly = shuffeling
 	randomNums.sort(function(a, b){return Math.random()-0.5});//sorting randomly = shuffeling
 	for(var i = 0; i<randomNums.length; i++){
-		document.getElementById("img"+i).src = "imgs/"+randomNums[i]+".png";
+		document.getElementById("img"+i).src = "static/imgs/"+randomNums[i]+".png";
 		document.getElementById("img"+i).setAttribute('onclick','play_card(\''+randomNums[i]+'\',\''+i+'\')');
 		document.getElementById("img"+i).style.opacity = "0";
 		document.getElementById("img"+i).style.filter  = 'alpha(opacity=0)';
 	}
+
 }
 
 generateBoard();
