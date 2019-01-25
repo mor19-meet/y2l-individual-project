@@ -8,5 +8,15 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def function(parameter):
-    pass
+def save_name(name):
+    name_object = userName(
+    	name = name)
+    session.add(name_object)
+    session.commit()
+save_name("mor")
+
+save_name("mor")
+def delete_name(their_name):
+   session.query(name).filter_by(
+       name=their_name).delete()
+   session.commit()
