@@ -1,4 +1,4 @@
-from models import *
+from model import *
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -14,7 +14,9 @@ def save_to_database(name):
 	session.add(new_name)
 	session.commit()
 
-
+def get_all_names():
+	names = session.query(Names).all()
+	return names
 
 # def save_name(name):
 #     name_object = userName(

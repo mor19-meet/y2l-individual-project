@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from database import *
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'suoer-secret-key'
 
@@ -23,10 +25,7 @@ def add_a_name():
 
 		save_to_database(name)
 		print("click below to play")
-		return render_template(url_for('text.html'))
-
-
-
+		return redirect(url_for('text.html'))
 
 if __name__ == '__main__':
     app.run(debug=True)
