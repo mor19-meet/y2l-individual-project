@@ -25,7 +25,7 @@ def add_a_name():
 
 		save_to_database(name)
 		print("click below to play")
-		return redirect(url_for('text.html'))
+		return redirect(url_for('memory_game'))
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -7,7 +7,7 @@
 <body>
 	<style>
 		.home{
-			font: 70px arial, sans-serif;
+			font: 80px arial, sans-serif;
 			text-align: center;
 			color:  #cc33ff;
 		}
@@ -19,23 +19,37 @@
 		}
 
 		.enter_name{
-			font: 20px arial, sans-serif;
+			font: 40px arial, sans-serif;
 			color:  #cc33ff;
+			text-align: center;
+			padding-bottom: 200%;
+		}
+
+		input{
+			background-color: #cc33ff; /* Green */
+			border: none;
+			color: black;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			border-radius: 12px;
 		}
 
 	</style>
 
 <div class="home"> 
-	<h1>memory game</h1>
+	<h2>memory game</h2>
 </div>
 
-<a href = "/game" class="btn btn-outline-light" >click here to play</a>
-<br>
+<!-- <a href = "/game" class="btn btn-outline-light" >click here to play</a> -->
 
 <form class="enter_name" action="/" method="POST">
-	<h3>please enter your name</h3>
-	<input type="text" name="name" placeholder="your name">
-	<input type="submit" value="submit">
+	<h3>please enter your name:</h3>
+	<input type="text" name="name" placeholder="name">
+	<br>
+	<input type="submit" value="click here to play">
 </form>
 
 </body>
