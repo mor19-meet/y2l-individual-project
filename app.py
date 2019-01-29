@@ -16,7 +16,7 @@ def memory_game():
 	# username = get_all_names()[0]
 	# for name in get_all_names():
 	# 	print(name)
-	return render_template('text.html' , name = get_all_names())
+	return render_template('text.html',namese = get_all_names())
 
 @app.route('/endgame')
 def endGamePage():

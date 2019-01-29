@@ -31,18 +31,18 @@ a{
 <body>
 	<div class="text1"> 
 		<H2>A memory game by Mor Yehuda</H2>
+		<h2 style="text-align:center;">scroll down(:</h2>
 	</div>
 	<a href = "/game"  >click here to start again</a>
 	<br>
 	<a href="/">click here to return to homepage </a>
 	<div id="game">
 	</div>
-	
-	<ul>
-		{% for name in names %}
-		<p>{{username.name}}</p>
-		{%endfor%}
-	</ul>
+	{% for uname in namese %}
+	<p>
+	<h4> hello {{uname.name}} !, good luck!!! </h4>
+	</p>
+	{%endfor%}
 
 </body>
 
