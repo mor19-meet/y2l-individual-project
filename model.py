@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Names(Base):
-	__tablename__ = "names"
+	__tablename__ = "username"
 	id = Column(Integer, primary_key = True)
 	name = Column(String)
 

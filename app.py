@@ -10,7 +10,9 @@ def home_page():
 
 @app.route('/game')
 def memory_game():
-    return render_template('text.html')
+	get_all_names()
+	username = get_all_names()[0]
+    return render_template('text.html' , username = username)
 
 @app.route('/endgame')
 def endGamePage():
