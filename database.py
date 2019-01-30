@@ -25,7 +25,9 @@ def get_all_names():
 #     session.commit()
 # save_name("mor")
 
-def delete_name(their_name):
-   session.query(name).filter_by(
-       name=their_name).delete()
-   session.commit()
+# def delete_name(their_name):
+#    session.query(name).filter_by(
+#        name=their_name).delete()
+#    session.commit()
+
+# delete_name()
