@@ -12,10 +12,6 @@ def home_page():
 
 @app.route('/game')
 def memory_game():
-	# get_all_names()
-	# username = get_all_names()[0]
-	# for name in get_all_names():
-	# 	print(name)
 	return render_template('text.html',namese = get_all_names())
 
 @app.route('/endgame')
@@ -32,6 +28,34 @@ def add_a_name():
 		save_to_database(name)
 		print("click below to play")
 		return redirect(url_for('memory_game'))
+
+################################
+# @app.route('/')
+# def home_page():
+# 	return render_template("home.html")
+
+
+# @app.route('/game' , methods = ['GET', 'POST'])
+# def game():
+# 	if request.method == 'POST':
+# 		return str(render_template('text.html')).replace('[name]',request.form['name'])
+# 	return str(render_template('text.html')).replace('[name]','name')
+
+# @app.route('/endgame' , methods = ['GET', 'POST'])
+# def end():
+# 	if request.method == 'POST':
+# 		return str(render_template('home.html')).replace('[name]',request.form['name'])
+# 	return str(render_template('home.html')).replace('[name]','name')
+
+
+################################
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
 	app.run(debug=True)
